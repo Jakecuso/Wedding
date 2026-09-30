@@ -9,8 +9,8 @@ window.WEDDING = {
   // Until it's set, RSVPs and questions can't be saved.
   scriptUrl: "",
 
-  ceremonyDate: "2026-10-31T16:00:00-04:00", // used for the countdown
-  ceremonyTime: "Time TBA",                  // shown on the page, e.g. "4:00 PM"
+  ceremonyDate: "2026-10-31T14:00:00-04:00", // used for the countdown
+  ceremonyTime: "2:00 PM",                   // shown on the page, e.g. "4:00 PM"
 
   venueName: "Serenity Ridge",
   // Airbnb shows the exact address in your reservation. Paste it here.

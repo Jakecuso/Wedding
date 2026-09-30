@@ -34,8 +34,8 @@ Now:
 
 | Setting | What to put |
 |---|---|
-| `ceremonyTime` | e.g. `"4:00 PM"` |
-| `ceremonyDate` | same time for the countdown, e.g. `"2026-10-31T16:00:00-04:00"` |
+| `ceremonyTime` | e.g. `"2:00 PM"` |
+| `ceremonyDate` | same time for the countdown, e.g. `"2026-10-31T14:00:00-04:00"` |
 | `venueAddress` | The exact address from your Airbnb reservation. Airbnb hides it until you book, so it couldn't be looked up. |
 | `mapsQuery` | Same address, so the map and "Open in Maps" button point to the house |
 | `overnightCodeHash` | Only if you change the code (see below) |
