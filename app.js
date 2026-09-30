@@ -79,8 +79,8 @@
     e.preventDefault();
     const going = rsvp.querySelector('input[name="attending"]:checked');
     const msg = going && going.value === "No"
-      ? "Thank you for letting us know. We'll miss you! 🍂"
-      : "Thank you! We can't wait to celebrate with you. 🎃🍁";
+      ? "Thank you for letting us know. We'll miss you!"
+      : "Thank you! We can't wait to celebrate with you.";
     send(rsvp, $("#rsvpStatus"), msg);
   });
 
@@ -187,8 +187,8 @@
       e.preventDefault();
       const s = stay.querySelector('input[name="staying"]:checked');
       send(stay, $("#stayStatus"), s && s.value === "No"
-        ? "Thanks for letting us know! We'll still see you during the day. 🍂"
-        : "You're all set! We'll save you a spot. 🛏️🎃");
+        ? "Thanks for letting us know! We'll still see you during the day."
+        : "You're all set! We'll save you a spot.");
     });
     stay.querySelectorAll('input[name="staying"]').forEach((r) =>
       r.addEventListener("change", () => $("#nightFields").classList.toggle("hidden", r.value !== "Yes" || !r.checked))
