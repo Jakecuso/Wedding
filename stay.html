@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Overnight Guests · Lindsey & Jake</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta property="og:title" content="You're invited to stay the weekend 🍂">
+  <meta property="og:description" content="Overnight guest info for Lindsey & Jake's wedding weekend.">
+  <meta property="og:image" content="https://jakecuso.github.io/Wedding/assets/couple.jpg">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛏️</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Lato:wght@400;700&family=Pinyon+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="gate" id="gate">
+  <div class="card">
+    <div class="script" style="font-size:2.6rem;color:var(--maroon)">Lindsey &amp; Jake</div>
+    <h3>Overnight Guests</h3>
+    <p style="color:var(--muted)">Enter the code from your invitation.</p>
+    <form id="gateForm">
+      <input type="password" id="code" placeholder="Guest code" autocomplete="off" aria-label="Guest code">
+      <button class="btn" type="submit">Enter</button>
+      <div class="status hidden" id="gateStatus" role="status"></div>
+    </form>
+    <p style="margin-top:1rem"><a href="./">← Back to the main invitation</a></p>
+  </div>
+</div>
+
+<div id="stayContent" class="hidden">
+  <nav>
+    <ul>
+      <li><a href="./">Main Invite</a></li>
+      <li><a href="#info">Stay Info</a></li>
+      <li><a href="#pack">Packing List</a></li>
+      <li><a href="#confirm">Confirm Your Stay</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero" style="min-height:70vh">
+    <div class="hero-photo"></div>
+    <div class="hero-text">
+      <p class="eyebrow">You're invited to stay the weekend</p>
+      <h1 class="script">Stay With Us</h1>
+      <p class="invite-line">We'd love for you to spend Halloween weekend with us at Serenity Ridge.</p>
+      <div class="date">Oct 30 to Nov 1</div>
+      <a class="btn" href="#confirm">Confirm Your Stay</a>
+    </div>
+  </header>
+
+  <section id="info">
+    <div class="wrap">
+      <h2>Stay Details</h2>
+      <div class="divider">🍂 🛏️ 🍂</div>
+      <div class="timeline">
+        <div class="card side">
+          <div class="day">Check-in</div>
+          <h3>Friday, 7:00 PM</h3>
+          <p>Come settle in and grab a spot by the fire.</p>
+        </div>
+        <div class="card main">
+          <div class="day">The Address</div>
+          <h3 data-bind="venueName">Serenity Ridge</h3>
+          <p data-bind="venueAddress"></p>
+        </div>
+        <div class="card side">
+          <div class="day">Check-out</div>
+          <h3>Sunday, by 10:00 AM</h3>
+          <p>Please help us tidy up before heading out.</p>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:1.5rem">
+        <h3>Good to Know</h3>
+        <ul style="margin:0;padding-left:1.2rem">
+          <li>The house has 6 bedrooms and 14 beds. Beds are shared and assigned by us, so an air mattress or sleeping bag is a great backup.</li>
+          <li>Heated pool, hot tub, fire pit, pool table, poker room and game room are all yours for the weekend.</li>
+          <li>There's a Ring doorbell camera at the front entrance.</li>
+          <li>The nearest groceries are about 12 minutes away in McArthur. Grab anything you need on the way in.</li>
+          <li>We'll text the door code and parking details the week of the wedding.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="pack" class="alt">
+    <div class="wrap">
+      <h2>Packing List</h2>
+      <div class="divider">🎃</div>
+      <div class="pack">
+        <div class="card"><div class="icon">🎭</div><h3>Halloween Costume</h3><p>For Saturday night!</p></div>
+        <div class="card"><div class="icon">🥾</div><h3>Hiking Shoes</h3><p>Ash Cave is 12 minutes away.</p></div>
+        <div class="card"><div class="icon">👙</div><h3>Swimsuit</h3><p>Heated pool and hot tub.</p></div>
+        <div class="card"><div class="icon">🪥</div><h3>Overnight Bag</h3><p>Toiletries, pajamas, towel, phone charger and any medications.</p></div>
+        <div class="card"><div class="icon">🛌</div><h3>Pillow &amp; Blanket</h3><p>Optional, but nice for cozy nights.</p></div>
+        <div class="card"><div class="icon">🧥</div><h3>Warm Layers</h3><p>For chilly nights around the fire.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="confirm">
+    <div class="narrow">
+      <h2>Confirm Your Stay</h2>
+      <div class="divider">🍁</div>
+      <p class="lead">Beds are limited, so please let us know by <strong>October 15</strong> whether you'll be staying. Please RSVP on the <a href="./#rsvp">main invitation</a> too.</p>
+      <form id="stayForm" novalidate>
+        <input type="hidden" name="type" value="overnight">
+        <div>
+          <label for="sName">Your name(s)</label>
+          <input type="text" id="sName" name="name" required>
+        </div>
+        <div>
+          <label>Will you be spending the night?</label>
+          <div class="choices">
+            <label><input type="radio" name="staying" value="Yes" required> Yes, count me in!</label>
+            <label><input type="radio" name="staying" value="No"> No, day only</label>
+          </div>
+        </div>
+        <div id="nightFields" class="hidden" style="display:grid;gap:1.1rem">
+          <div>
+            <label>Which nights?</label>
+            <div class="choices">
+              <label><input type="checkbox" name="nights" value="Friday night"> Friday, Oct 30</label>
+              <label><input type="checkbox" name="nights" value="Saturday night"> Saturday, Oct 31</label>
+            </div>
+          </div>
+          <div>
+            <label for="sCount">How many people staying (including you)?</label>
+            <input type="number" id="sCount" name="partySize" min="1" max="6" value="1">
+          </div>
+          <div>
+            <label for="sNotes">Anything we should know? <span class="hint">(sharing a bed, bringing an air mattress, etc.)</span></label>
+            <textarea id="sNotes" name="message"></textarea>
+          </div>
+        </div>
+        <button class="btn" type="submit">Confirm</button>
+        <div class="status hidden" id="stayStatus" role="status"></div>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <div class="script">Lindsey &amp; Jake</div>
+    <p>10 · 31 · 2026 · Hocking Hills, Ohio</p>
+  </footer>
+</div>
+
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

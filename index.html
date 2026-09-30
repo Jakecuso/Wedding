@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lindsey & Jake · October 31, 2026</title>
+  <meta name="description" content="You're invited to celebrate the wedding of Lindsey Adams & Jake Mancuso, Saturday, October 31, 2026 in Hocking Hills, Ohio.">
+  <meta property="og:title" content="Lindsey & Jake are getting married! 🍂">
+  <meta property="og:description" content="Saturday, October 31, 2026 · Hocking Hills, Ohio. Please RSVP.">
+  <meta property="og:image" content="https://jakecuso.github.io/Wedding/assets/couple.jpg">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍂</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Lato:wght@400;700&family=Pinyon+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <ul>
+    <li><a href="#details">Details</a></li>
+    <li><a href="#venue">Venue</a></li>
+    <li><a href="#bring">What to Bring</a></li>
+    <li><a href="#rsvp">RSVP</a></li>
+    <li><a href="#questions">Questions</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <div class="hero-photo" role="img" aria-label="Lindsey and Jake hugging and laughing among the trees"></div>
+  <div class="hero-text">
+    <p class="eyebrow">Together with their families</p>
+    <h1 class="script">Lindsey <span class="amp">&amp;</span> Jake</h1>
+    <p class="invite-line">Lindsey Adams and Jake Mancuso request the pleasure of your company as they celebrate their marriage</p>
+    <div class="date">Saturday · October 31 · 2026</div>
+    <p style="margin:0">Serenity Ridge · Hocking Hills, Ohio</p>
+    <div class="leaves" aria-hidden="true">🍁 🍂 🎃 🍂 🍁</div>
+    <div class="countdown" id="countdown" aria-live="off"></div>
+    <a class="btn" href="#rsvp">RSVP</a>
+  </div>
+</header>
+
+<section id="details">
+  <div class="wrap">
+    <h2>The Weekend</h2>
+    <div class="divider">🍂 🍂 🍂</div>
+    <p class="lead">We're spending Halloween weekend in the Hocking Hills and we'd love for you to join us for as much of it as you can.</p>
+    <div class="timeline">
+      <div class="card side">
+        <div class="day">Friday · Oct 30</div>
+        <h3>Arrivals &amp; Welcome</h3>
+        <p>Guests start arriving at <strong>7:00 PM</strong>. Come hang out by the fire pit, hot tub and pool.</p>
+      </div>
+      <div class="card main">
+        <div class="day">Saturday · Oct 31</div>
+        <h3>The Ceremony</h3>
+        <p><strong data-bind="ceremonyTime">Time TBA</strong>. Then we celebrate into the night. It's Halloween, so <strong>costumes are encouraged!</strong> 🎃</p>
+      </div>
+      <div class="card side">
+        <div class="day">Sunday · Nov 1</div>
+        <h3>Farewell</h3>
+        <p>Overnight guests head home. Everyone out by <strong>10:00 AM</strong>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="venue" class="alt">
+  <div class="wrap">
+    <h2>The Venue</h2>
+    <div class="divider">🍁</div>
+    <div class="venue">
+      <div>
+        <h3 data-bind="venueName">Serenity Ridge</h3>
+        <p><strong data-bind="venueAddress"></strong></p>
+        <p>A hilltop log estate with valley views in the heart of the Hocking Hills:</p>
+        <ul>
+          <li>Heated pool with valley views and a hot tub</li>
+          <li>Fire pit, cornhole, pool table and a game room</li>
+          <li>About 12 minutes from Ash Cave, 20 minutes from the Hocking Hills Visitor Center</li>
+          <li>Groceries and restaurants about 12 minutes away in McArthur</li>
+        </ul>
+        <a class="btn green" id="mapsLink" target="_blank" rel="noopener">Open in Maps</a>
+      </div>
+      <iframe id="mapFrame" loading="lazy" title="Map of the venue area"></iframe>
+    </div>
+  </div>
+</section>
+
+<section id="bring">
+  <div class="wrap">
+    <h2>What to Bring</h2>
+    <div class="divider">🎃</div>
+    <p class="lead">It's a Halloween wedding in the woods, so pack for fun.</p>
+    <div class="pack">
+      <div class="card"><div class="icon">🎭</div><h3>A Halloween Costume</h3><p>Get creative. It's October 31st!</p></div>
+      <div class="card"><div class="icon">🥾</div><h3>Hiking Shoes</h3><p>Ash Cave and the trails are just down the road.</p></div>
+      <div class="card"><div class="icon">👙</div><h3>A Swimsuit</h3><p>For the heated pool and the hot tub.</p></div>
+      <div class="card"><div class="icon">🧥</div><h3>Layers</h3><p>Late-October nights in the hills get chilly.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="rsvp" class="alt">
+  <div class="narrow">
+    <h2>RSVP</h2>
+    <div class="divider">🍂</div>
+    <p class="lead">Please let us know by <strong>October 15</strong> whether you can make it, and which days you'll join us.</p>
+
+    <form id="rsvpForm" novalidate>
+      <input type="hidden" name="type" value="rsvp">
+      <div>
+        <label for="name">Your name(s)</label>
+        <input type="text" id="name" name="name" required autocomplete="name" placeholder="First & last name">
+      </div>
+      <div class="row">
+        <div>
+          <label for="email">Email <span class="hint">(optional)</span></label>
+          <input type="email" id="email" name="email" autocomplete="email">
+        </div>
+        <div>
+          <label for="phone">Phone <span class="hint">(optional)</span></label>
+          <input type="tel" id="phone" name="phone" autocomplete="tel">
+        </div>
+      </div>
+
+      <div>
+        <label>Will you be joining us?</label>
+        <div class="choices">
+          <label><input type="radio" name="attending" value="Yes" required> Joyfully accepts 🎉</label>
+          <label><input type="radio" name="attending" value="No"> Regretfully declines</label>
+        </div>
+      </div>
+
+      <div id="yesFields" class="hidden">
+        <div style="display:grid;gap:1.1rem">
+          <div class="row">
+            <div>
+              <label for="partySize">How many in your party?</label>
+              <input type="number" id="partySize" name="partySize" min="1" max="10" value="1">
+            </div>
+            <div>
+              <label for="guestNames">Names of others in your party</label>
+              <input type="text" id="guestNames" name="guestNames" placeholder="Optional">
+            </div>
+          </div>
+          <div>
+            <label>Which days will you be there?</label>
+            <div class="choices">
+              <label><input type="checkbox" name="days" value="Friday evening"> Fri, Oct 30 (from 7 PM)</label>
+              <label><input type="checkbox" name="days" value="Saturday ceremony" checked> Sat, Oct 31 (ceremony)</label>
+            </div>
+          </div>
+          <div>
+            <label for="dietary">Food allergies or dietary needs</label>
+            <input type="text" id="dietary" name="dietary" placeholder="Optional">
+          </div>
+          <p class="hint" style="margin:0">Invited to stay overnight? Use the separate overnight link we sent you to let us know which nights you're staying.</p>
+        </div>
+      </div>
+
+      <div>
+        <label for="message">A note for the couple <span class="hint">(optional)</span></label>
+        <textarea id="message" name="message"></textarea>
+      </div>
+
+      <button class="btn" type="submit">Send RSVP</button>
+      <div class="status hidden" id="rsvpStatus" role="status"></div>
+    </form>
+  </div>
+</section>
+
+<section id="questions">
+  <div class="narrow">
+    <h2>Questions &amp; Answers</h2>
+    <div class="divider">🍁</div>
+    <p class="lead">Have a question? Ask below. We'll answer it here so everyone can see.</p>
+    <div class="qa-list" id="qaList"><p class="empty">Loading questions…</p></div>
+
+    <form id="questionForm" novalidate>
+      <input type="hidden" name="type" value="question">
+      <div>
+        <label for="qName">Your name</label>
+        <input type="text" id="qName" name="name" required>
+      </div>
+      <div>
+        <label for="qText">Your question</label>
+        <textarea id="qText" name="question" required></textarea>
+      </div>
+      <button class="btn green" type="submit">Ask a Question</button>
+      <div class="status hidden" id="qStatus" role="status"></div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="script">Lindsey &amp; Jake</div>
+  <p>10 · 31 · 2026 · Hocking Hills, Ohio</p>
+</footer>
+
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
