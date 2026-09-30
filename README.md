@@ -45,7 +45,7 @@ The **RSVP by October 14** date is in `index.html` and `stay.html`. Search for "
 ## 4. Password for Friday / overnight guests
 
 - The main invite only shows **Saturday**. There's a **🔑 Enter Password (if given)** button under "The Weekend".
-- With the right password (default `pumpkin`), the page reveals the **Friday 7 PM arrival** and **Sunday checkout** details, adds a **Friday option to the RSVP**, and links to the overnight guest page (`stay.html`).
+- With the right password (default `pumpkin`), the page reveals the **Friday 6 PM arrival** and **Sunday checkout** details, adds a **Friday option to the RSVP**, and links to the overnight guest page (`stay.html`).
 - The password is **not** remembered: refreshing the page locks it again. Buttons between the two pages carry the password along, so guests only type it once per visit.
 - Shortcut link that unlocks automatically: `https://jakecuso.github.io/Wedding/?code=pumpkin`
 - To change the password, run `echo -n "newpassword" | sha256sum` (use lowercase) and paste the result into `overnightCodeHash` in `config.js`.
@@ -55,7 +55,7 @@ The **RSVP by October 14** date is in `index.html` and `stay.html`. Search for "
 
 - `index.html`: main invitation, RSVP, Q&A
 - `stay.html`: overnight guest page and stay confirmation
-- `style.css`: fall theme (burnt orange, maroon, olive green)
+- `style.css`: plum, moss, champagne and ivory theme
 - `app.js`: forms, countdown, Q&A loading, code gate
 - `config.js`: **the details you edit**
 - `apps-script/Code.gs`: Google Sheet backend
