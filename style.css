@@ -97,6 +97,7 @@ section.alt { background: var(--paper); border-top: 1px solid var(--line); borde
 .card .day { font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; color: var(--orange); font-weight: 700; }
 .card h3 { margin: .3rem 0 .4rem; }
 .card p { margin: 0; color: var(--muted); }
+.card p.attire { margin-top: .6rem; padding-top: .6rem; border-top: 1px dashed var(--line); color: var(--ink); }
 .card.main { border-top: 5px solid var(--maroon); }
 .card.side { border-top: 5px solid var(--green); }
 

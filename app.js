@@ -141,7 +141,10 @@
   async function savedCodeOk() {
     const urlCode = new URLSearchParams(location.search).get("code");
     try { localStorage.removeItem("stayCode"); } catch (e) {} // clear codes saved by older versions
-    return checkCode(urlCode);
+    const ok = await checkCode(urlCode);
+    // Remove the code from the address bar so a refresh locks the page again
+    if (urlCode) history.replaceState(null, "", location.pathname + location.hash);
+    return ok;
   }
 
   // Main invite: reveal Friday details + Friday RSVP option
