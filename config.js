@@ -13,9 +13,8 @@ window.WEDDING = {
   ceremonyTime: "2:00 PM",                   // shown on the page, e.g. "4:00 PM"
 
   venueName: "Serenity Ridge",
-  // Airbnb shows the exact address in your reservation. Paste it here.
-  venueAddress: "Creola, Ohio (Hocking Hills). Full address coming soon",
-  mapsQuery: "Creola, Ohio",
+  venueAddress: "64420 Bethel Rd, Creola, OH 45622",
+  mapsQuery: "64420 Bethel Rd, Creola, OH 45622",
 
   // SHA-256 hash of the overnight guest code. The default code is: pumpkin
   // To change it, run in a terminal:  echo -n "yournewcode" | sha256sum

@@ -131,15 +131,17 @@
   };
   async function checkCode(code) {
     if (!code || (await sha(code)) !== W.overnightCodeHash) return false;
-    try { localStorage.setItem("stayCode", code); } catch (e) {}
+    // Not remembered: a refresh locks it again. Carry the code to the other page's links instead.
+    document.querySelectorAll('a[href^="stay.html"], a[href^="./"]').forEach((a) => {
+      const [path, hash] = a.getAttribute("href").split("#");
+      a.href = path + "?code=" + encodeURIComponent(code) + (hash ? "#" + hash : "");
+    });
     return true;
   }
   async function savedCodeOk() {
     const urlCode = new URLSearchParams(location.search).get("code");
-    if (await checkCode(urlCode)) return true;
-    let saved = null;
-    try { saved = localStorage.getItem("stayCode"); } catch (e) {}
-    return checkCode(saved);
+    try { localStorage.removeItem("stayCode"); } catch (e) {} // clear codes saved by older versions
+    return checkCode(urlCode);
   }
 
   // Main invite: reveal Friday details + Friday RSVP option

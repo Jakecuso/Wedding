@@ -36,17 +36,17 @@ Now:
 |---|---|
 | `ceremonyTime` | e.g. `"2:00 PM"` |
 | `ceremonyDate` | same time for the countdown, e.g. `"2026-10-31T14:00:00-04:00"` |
-| `venueAddress` | The exact address from your Airbnb reservation. Airbnb hides it until you book, so it couldn't be looked up. |
+| `venueAddress` | The house address (set to 64420 Bethel Rd, Creola, OH 45622) |
 | `mapsQuery` | Same address, so the map and "Open in Maps" button point to the house |
 | `overnightCodeHash` | Only if you change the code (see below) |
 
-The **RSVP by October 15** date is in `index.html` and `stay.html`. Search for "October 15" to change it.
+The **RSVP by October 14** date is in `index.html` and `stay.html`. Search for "October 14" to change it.
 
 ## 4. Password for Friday / overnight guests
 
 - The main invite only shows **Saturday**. There's a **🔑 Enter Password (if given)** button under "The Weekend".
 - With the right password (default `pumpkin`), the page reveals the **Friday 7 PM arrival** and **Sunday checkout** details, adds a **Friday option to the RSVP**, and links to the overnight guest page (`stay.html`).
-- The password is remembered on that phone, so the overnight page opens without asking again.
+- The password is **not** remembered: refreshing the page locks it again. Buttons between the two pages carry the password along, so guests only type it once per visit.
 - Shortcut link that unlocks automatically: `https://jakecuso.github.io/Wedding/?code=pumpkin`
 - To change the password, run `echo -n "newpassword" | sha256sum` (use lowercase) and paste the result into `overnightCodeHash` in `config.js`.
 - The password keeps casual guests from seeing Friday info, but anyone technical could read it in the page source. **Don't put door codes or Wi-Fi passwords on the site.** Text them to overnight guests instead.

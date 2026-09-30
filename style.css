@@ -3,8 +3,8 @@
   --maroon-dark: #4a1320;
   --orange: #c8662b;
   --orange-soft: #e39a5c;
-  --green: #5e6b3a;
-  --green-dark: #3f4a26;
+  --green: #7d9471;
+  --green-dark: #4f6147;
   --cream: #faf3e6;
   --paper: #fffaf1;
   --ink: #2e2320;
@@ -55,7 +55,7 @@ nav a:hover { color: var(--orange-soft); }
   padding: 3rem 1.5rem;
   background:
     radial-gradient(circle at 20% 15%, rgba(200,102,43,.35), transparent 45%),
-    radial-gradient(circle at 85% 90%, rgba(94,107,58,.45), transparent 50%),
+    radial-gradient(circle at 85% 90%, rgba(156,175,136,.4), transparent 50%),
     var(--maroon-dark);
 }
 .eyebrow { letter-spacing: .3em; text-transform: uppercase; font-size: .8rem; color: var(--orange-soft); margin: 0 0 1rem; }
@@ -129,7 +129,7 @@ textarea { min-height: 100px; resize: vertical; }
 .choices label:has(input:checked) { border-color: var(--maroon); background: #f7e8e4; }
 .hidden { display: none !important; }
 .status { text-align: center; padding: 1rem; border-radius: 10px; }
-.status.ok { background: #e9eedb; color: var(--green-dark); }
+.status.ok { background: #e6ede0; color: var(--green-dark); }
 .status.err { background: #f7e1dc; color: var(--maroon); }
 
 /* ---------- Q&A ---------- */
