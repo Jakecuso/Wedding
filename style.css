@@ -167,3 +167,5 @@ footer .script { font-size: 2.4rem; color: var(--orange-soft); }
 .pw-box input { max-width: 220px; }
 .unlocked-note { text-align: center; margin-top: 2rem; background: #fff; border: 1px dashed var(--green); border-radius: var(--radius); padding: 1.2rem; }
 .unlocked-note p { margin: 0 0 1rem; }
+
+.plusone { text-align: center; background: #fff; border: 1px dashed var(--orange); border-radius: 10px; padding: .8rem 1rem; margin: -1rem auto 2rem; font-size: .95rem; }

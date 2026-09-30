@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Lato:wght@400;700&family=Pinyon+Script&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=6">
+  <link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
 
@@ -107,10 +107,11 @@
       <h2>Confirm Your Stay</h2>
       <div class="divider">🍁</div>
       <p class="lead">Beds are limited, so please let us know by <strong>October 14</strong> whether you'll be staying. Please RSVP on the <a href="./#rsvp">main invitation</a> too.</p>
+      <p class="plusone">💌 If you have a plus one, they'll fill out this form separately.</p>
       <form id="stayForm" novalidate>
         <input type="hidden" name="type" value="overnight">
         <div>
-          <label for="sName">Your name(s)</label>
+          <label for="sName">Your name</label>
           <input type="text" id="sName" name="name" required>
         </div>
         <div>
@@ -129,10 +130,6 @@
             </div>
           </div>
           <div>
-            <label for="sCount">How many people staying (including you)?</label>
-            <input type="number" id="sCount" name="partySize" min="1" max="6" value="1">
-          </div>
-          <div>
             <label for="sNotes">Anything we should know? <span class="hint">(sharing a bed, bringing an air mattress, etc.)</span></label>
             <textarea id="sNotes" name="message"></textarea>
           </div>
@@ -149,7 +146,7 @@
   </footer>
 </div>
 
-<script src="config.js?v=6"></script>
-<script src="app.js?v=6"></script>
+<script src="config.js?v=7"></script>
+<script src="app.js?v=7"></script>
 </body>
 </html>

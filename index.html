@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Lato:wght@400;700&family=Pinyon+Script&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=6">
+  <link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
 
@@ -120,12 +120,13 @@
   <div class="narrow">
     <h2>RSVP</h2>
     <div class="divider">🍂</div>
-    <p class="lead">Please let us know by <strong>October 14</strong> whether you can make it, and which days you'll join us.</p>
+    <p class="lead">Please let us know by <strong>October 14</strong> whether you can make it.</p>
+    <p class="plusone">💌 <strong>Each invitation is for one person.</strong> If you have a plus one, they'll be sent their own invite and need to fill out this form separately.</p>
 
     <form id="rsvpForm" novalidate>
       <input type="hidden" name="type" value="rsvp">
       <div>
-        <label for="name">Your name(s)</label>
+        <label for="name">Your name</label>
         <input type="text" id="name" name="name" required autocomplete="name" placeholder="First & last name">
       </div>
       <div class="row">
@@ -149,16 +150,6 @@
 
       <div id="yesFields" class="hidden">
         <div style="display:grid;gap:1.1rem">
-          <div class="row">
-            <div>
-              <label for="partySize">How many in your party?</label>
-              <input type="number" id="partySize" name="partySize" min="1" max="10" value="1">
-            </div>
-            <div>
-              <label for="guestNames">Names of others in your party</label>
-              <input type="text" id="guestNames" name="guestNames" placeholder="Optional">
-            </div>
-          </div>
           <input type="hidden" name="days" value="Saturday ceremony" class="public-only">
           <div class="private hidden">
             <label>Which days will you be there?</label>
@@ -214,7 +205,7 @@
   <p>10 · 31 · 2026 · Hocking Hills, Ohio</p>
 </footer>
 
-<script src="config.js?v=6"></script>
-<script src="app.js?v=6"></script>
+<script src="config.js?v=7"></script>
+<script src="app.js?v=7"></script>
 </body>
 </html>
