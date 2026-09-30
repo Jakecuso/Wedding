@@ -45,9 +45,9 @@
   <div class="wrap">
     <h2>The Weekend</h2>
     <div class="divider">🍂 🍂 🍂</div>
-    <p class="lead">We're spending Halloween weekend in the Hocking Hills and we'd love for you to join us for as much of it as you can.</p>
+    <p class="lead">We're celebrating on Halloween in the Hocking Hills and we'd love for you to be there.</p>
     <div class="timeline">
-      <div class="card side">
+      <div class="card side private hidden">
         <div class="day">Friday · Oct 30</div>
         <h3>Arrivals &amp; Welcome</h3>
         <p>Guests start arriving at <strong>7:00 PM</strong>. Come hang out by the fire pit, hot tub and pool.</p>
@@ -57,11 +57,23 @@
         <h3>The Ceremony</h3>
         <p><strong data-bind="ceremonyTime">Time TBA</strong>. Then we celebrate into the night. It's Halloween, so <strong>costumes are encouraged!</strong> 🎃</p>
       </div>
-      <div class="card side">
+      <div class="card side private hidden">
         <div class="day">Sunday · Nov 1</div>
         <h3>Farewell</h3>
         <p>Overnight guests head home. Everyone out by <strong>10:00 AM</strong>.</p>
       </div>
+    </div>
+    <div class="pw-box" id="pwBox">
+      <button class="btn green" type="button" id="pwOpen">🔑 Enter Password (if given)</button>
+      <form id="pwForm" class="hidden">
+        <input type="password" id="pw" placeholder="Password" autocomplete="off" aria-label="Password">
+        <button class="btn" type="submit">Unlock</button>
+      </form>
+      <div class="status hidden" id="pwStatus" role="status"></div>
+    </div>
+    <div class="private hidden unlocked-note">
+      <p>🔓 <strong>You're invited for the whole weekend!</strong> Arrive Friday from 7 PM and stay through Sunday morning.</p>
+      <a class="btn" href="stay.html">Overnight Guest Details</a>
     </div>
   </div>
 </section>
@@ -145,18 +157,19 @@
               <input type="text" id="guestNames" name="guestNames" placeholder="Optional">
             </div>
           </div>
-          <div>
+          <input type="hidden" name="days" value="Saturday ceremony" class="public-only">
+          <div class="private hidden">
             <label>Which days will you be there?</label>
             <div class="choices">
-              <label><input type="checkbox" name="days" value="Friday evening"> Fri, Oct 30 (from 7 PM)</label>
-              <label><input type="checkbox" name="days" value="Saturday ceremony" checked> Sat, Oct 31 (ceremony)</label>
+              <label><input type="checkbox" name="days" value="Friday evening (7 PM)" disabled> Fri, Oct 30 (from 7 PM)</label>
+              <label><input type="checkbox" name="days" value="Saturday ceremony" checked disabled> Sat, Oct 31 (ceremony)</label>
             </div>
           </div>
           <div>
             <label for="dietary">Food allergies or dietary needs</label>
             <input type="text" id="dietary" name="dietary" placeholder="Optional">
           </div>
-          <p class="hint" style="margin:0">Invited to stay overnight? Use the separate overnight link we sent you to let us know which nights you're staying.</p>
+          <p class="hint private hidden" style="margin:0">Staying the night? Also confirm which nights on the <a href="stay.html#confirm">overnight guest page</a>.</p>
         </div>
       </div>
 

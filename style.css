@@ -157,3 +157,12 @@ footer .script { font-size: 2.4rem; color: var(--orange-soft); }
   nav ul { gap: .8rem; }
   nav a { font-size: .75rem; }
 }
+
+/* ---------- password unlock ---------- */
+.timeline { display: flex; flex-wrap: wrap; justify-content: center; }
+.timeline .card { flex: 1 1 240px; max-width: 300px; }
+.pw-box { text-align: center; margin-top: 2rem; display: grid; gap: .8rem; justify-items: center; }
+.pw-box form { display: flex; gap: .6rem; flex-wrap: wrap; justify-content: center; }
+.pw-box input { max-width: 220px; }
+.unlocked-note { text-align: center; margin-top: 2rem; background: #fff; border: 1px dashed var(--green); border-radius: var(--radius); padding: 1.2rem; }
+.unlocked-note p { margin: 0 0 1rem; }

@@ -3,7 +3,7 @@
 Electronic invitation with RSVP, guest Q&A, and a code-protected page for overnight guests.
 
 - **Main invite (everyone):** `https://jakecuso.github.io/Wedding/`
-- **Overnight guests only:** `https://jakecuso.github.io/Wedding/stay.html?code=pumpkin`
+- **Friday / overnight guests:** same link, then tap **Enter Password** (default `pumpkin`)
 
 ## 1. Turn on the website (GitHub Pages)
 
@@ -42,12 +42,14 @@ Now:
 
 The **RSVP by October 15** date is in `index.html` and `stay.html`. Search for "October 15" to change it.
 
-## 4. Overnight guests
+## 4. Password for Friday / overnight guests
 
-- Everyone gets the main link. Only people you want to stay over get the **stay link**. It has the code built in, so they don't have to type it:
-  `https://jakecuso.github.io/Wedding/stay.html?code=pumpkin`
-- To change the code, run `echo -n "newcode" | sha256sum` (use lowercase) and paste the result into `overnightCodeHash`.
-- The code keeps casual visitors out, but anyone technical could read the page's source. **Don't put door codes or Wi-Fi passwords on the site.** Text them to overnight guests instead.
+- The main invite only shows **Saturday**. There's a **🔑 Enter Password (if given)** button under "The Weekend".
+- With the right password (default `pumpkin`), the page reveals the **Friday 7 PM arrival** and **Sunday checkout** details, adds a **Friday option to the RSVP**, and links to the overnight guest page (`stay.html`).
+- The password is remembered on that phone, so the overnight page opens without asking again.
+- Shortcut link that unlocks automatically: `https://jakecuso.github.io/Wedding/?code=pumpkin`
+- To change the password, run `echo -n "newpassword" | sha256sum` (use lowercase) and paste the result into `overnightCodeHash` in `config.js`.
+- The password keeps casual guests from seeing Friday info, but anyone technical could read it in the page source. **Don't put door codes or Wi-Fi passwords on the site.** Text them to overnight guests instead.
 
 ## Files
 

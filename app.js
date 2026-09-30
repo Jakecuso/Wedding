@@ -124,32 +124,57 @@
     }
   }
 
+  // ---------- Password unlock (shared by both pages) ----------
+  const sha = async (t) => {
+    const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(String(t).trim().toLowerCase()));
+    return [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, "0")).join("");
+  };
+  async function checkCode(code) {
+    if (!code || (await sha(code)) !== W.overnightCodeHash) return false;
+    try { localStorage.setItem("stayCode", code); } catch (e) {}
+    return true;
+  }
+  async function savedCodeOk() {
+    const urlCode = new URLSearchParams(location.search).get("code");
+    if (await checkCode(urlCode)) return true;
+    let saved = null;
+    try { saved = localStorage.getItem("stayCode"); } catch (e) {}
+    return checkCode(saved);
+  }
+
+  // Main invite: reveal Friday details + Friday RSVP option
+  const pwBox = $("#pwBox");
+  if (pwBox) {
+    const unlockInvite = () => {
+      document.querySelectorAll(".private").forEach((el) => el.classList.remove("hidden"));
+      document.querySelectorAll(".private input").forEach((el) => (el.disabled = false));
+      document.querySelectorAll(".public-only").forEach((el) => (el.disabled = true));
+      pwBox.classList.add("hidden");
+    };
+    savedCodeOk().then((ok) => ok && unlockInvite());
+    $("#pwOpen").addEventListener("click", () => {
+      $("#pwOpen").classList.add("hidden");
+      $("#pwForm").classList.remove("hidden");
+      $("#pw").focus();
+    });
+    $("#pwForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      if (await checkCode($("#pw").value)) unlockInvite();
+      else status($("#pwStatus"), false, "That password doesn't match. Check the message we sent you.");
+    });
+  }
+
   // Overnight page code gate
   const gate = $("#gate");
   if (gate) {
     const content = $("#stayContent");
-    const sha = async (t) => {
-      const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(t.trim().toLowerCase()));
-      return [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, "0")).join("");
-    };
     const unlock = () => { gate.classList.add("hidden"); content.classList.remove("hidden"); };
-    const tryCode = async (code) => {
-      if (code && (await sha(code)) === W.overnightCodeHash) {
-        try { localStorage.setItem("stayCode", code); } catch (e) {}
-        unlock();
-        return true;
-      }
-      return false;
-    };
-    // Accept ?code=... in the link, or a remembered code
-    const urlCode = new URLSearchParams(location.search).get("code");
-    let saved = null;
-    try { saved = localStorage.getItem("stayCode"); } catch (e) {}
-    (async () => { if (!(await tryCode(urlCode))) await tryCode(saved); })();
+    savedCodeOk().then((ok) => ok && unlock());
 
     $("#gateForm").addEventListener("submit", async (e) => {
       e.preventDefault();
-      if (!(await tryCode($("#code").value))) status($("#gateStatus"), false, "That code doesn't match. Check the message we sent you.");
+      if (await checkCode($("#code").value)) unlock();
+      else status($("#gateStatus"), false, "That password doesn't match. Check the message we sent you.");
     });
 
     const stay = $("#stayForm");
