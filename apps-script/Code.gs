@@ -15,8 +15,21 @@ const HEADERS = {
   Questions: ["Timestamp", "Name", "Question", "Answer"],
 };
 
+// Works whether the script is attached to a sheet or created on its own
+// at script.google.com (then setup() creates a "Wedding RSVPs" sheet).
+function book_() {
+  const active = SpreadsheetApp.getActiveSpreadsheet();
+  if (active) return active;
+  const props = PropertiesService.getScriptProperties();
+  const id = props.getProperty("SHEET_ID");
+  if (id) return SpreadsheetApp.openById(id);
+  const ss = SpreadsheetApp.create("Wedding RSVPs");
+  props.setProperty("SHEET_ID", ss.getId());
+  return ss;
+}
+
 function sheet_(name) {
-  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const ss = book_();
   let sh = ss.getSheetByName(name);
   if (!sh) {
     sh = ss.insertSheet(name);
@@ -69,4 +82,8 @@ function doGet(e) {
 /** Run once from the editor to create the tabs. */
 function setup() {
   Object.keys(HEADERS).forEach(sheet_);
+  const ss = book_();
+  const blank = ss.getSheetByName("Sheet1");
+  if (blank && ss.getSheets().length > 1) ss.deleteSheet(blank);
+  Logger.log("Your RSVP sheet: " + ss.getUrl());
 }
