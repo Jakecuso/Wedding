@@ -7,7 +7,7 @@ window.WEDDING = {
 
   // Paste your Google Apps Script "Web app" URL here (see README.md).
   // Until it's set, RSVPs and questions can't be saved.
-  scriptUrl: "",
+  scriptUrl: "https://script.google.com/macros/s/AKfycbzW_4b3Z3zOdRoV2GN0SXA3HoO7KV3RBhc7anJeFGIU3iMpKxYFJRwN7kMsNyqvKst1uQ/exec",
 
   ceremonyDate: "2026-10-31T14:00:00-04:00", // used for the countdown
   ceremonyTime: "2:00 PM",                   // shown on the page, e.g. "4:00 PM"
