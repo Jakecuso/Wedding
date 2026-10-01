@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=11">
+  <link rel="stylesheet" href="style.css?v=12">
 </head>
 <body>
 
@@ -61,7 +61,7 @@
           <div>1:00 PM<small>Guests arrive</small></div>
           <div><span data-bind="ceremonyTime">2:00 PM</span><small>Ceremony</small></div>
         </div>
-        <p>Please arrive by 1:00 PM. The ceremony begins at 2:00 PM, followed by a Halloween after party. Bring a costume to change into!</p>
+        <p>Please arrive by 1:00 PM. Appetizers and dinner are provided, so come hungry!</p>
         <p class="attire"><strong>Attire:</strong> Semi-formal or cocktail, autumn theme colors encouraged</p>
       </div>
       <div class="card private hidden">
@@ -69,6 +69,17 @@
         <h3>Farewell</h3>
         <p>Overnight guests head home. Everyone out by <strong>10:00 AM</strong>.</p>
       </div>
+    </div>
+    <div class="schedule">
+      <span class="kicker">Order of the day</span>
+      <ol>
+        <li><time>1:00 PM</time><div><h3>Guests Arrive</h3><p>Find a seat and settle in.</p></div></li>
+        <li><time>2:00 PM</time><div><h3>Ceremony</h3><p>We say “I do.”</p></div></li>
+        <li><time>3:00 PM</time><div><h3>Appetizers &amp; Photos</h3><p>Enjoy appetizers while the photographer gets pictures with family and friends.</p></div></li>
+        <li><time>5:00 PM</time><div><h3>Dinner</h3><p>A full Italian dinner is served. See the <a href="#menu">menu</a>.</p></div></li>
+        <li><time>6:00 PM</time><div><h3>Cake Cutting</h3><p>Followed by dessert, drinks and time to mingle.</p></div></li>
+        <li><time>8:00 PM</time><div><h3>Halloween Party</h3><p>Around 8, change into your costume and let the after party begin!</p></div></li>
+      </ol>
     </div>
     <div class="pw-box" id="pwBox">
       <button class="btn moss" type="button" id="pwOpen">Enter Password (if given)</button>
@@ -144,10 +155,20 @@
   <div class="narrow">
     <span class="kicker">To eat &amp; drink</span>
     <h2>The Menu</h2>
-    <div class="coming-soon">
-      <h3>Coming Soon</h3>
-      <p>We're still finalizing the menu. It will be posted right here, so check back regularly for updates.</p>
+    <p class="lead">Dinner is served at 5:00 PM, with appetizers starting at 3:00 PM.</p>
+    <div class="coming-soon menu-card">
+      <span class="kicker">Dinner</span>
+      <ul class="menu-list">
+        <li>Chicken Alfredo with Penne</li>
+        <li>Italian Sausage in a Roasted Red Pepper Cream</li>
+        <li>Salad with Dressings</li>
+        <li>Garlic Breadsticks</li>
+      </ul>
+      <div class="menu-divider" aria-hidden="true"></div>
+      <span class="kicker">Dessert · 6:00 PM</span>
+      <p class="menu-item">Wedding Cake</p>
     </div>
+    <p class="menu-note">Food allergies? Let us know in your RSVP.</p>
   </div>
 </section>
 
@@ -244,7 +265,7 @@
   <p>10 · 31 · 2026 · Hocking Hills, Ohio</p>
 </footer>
 
-<script src="config.js?v=11"></script>
-<script src="app.js?v=11"></script>
+<script src="config.js?v=12"></script>
+<script src="app.js?v=12"></script>
 </body>
 </html>
